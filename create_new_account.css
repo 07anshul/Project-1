@@ -1,0 +1,27 @@
+body {
+  background-color: rgb(192,192,192);
+}
+
+h2 {
+  color: brown;
+}
+
+.signup_form {
+  border: solid black 1px;
+  border-radius: 2px;
+  background: rgba(255, 230, 110, 0.5);
+  margin-top: 200px;
+  margin-left: 900px;
+  width: 15%;
+  padding-top: 100px;
+  padding-left: 50px;
+  padding-bottom: 60px;
+}
+
+#signup {
+  padding: 5px 20px;
+  margin-top: 20px;
+  margin-left: 55px;
+  border: solid black 1px;
+  background-color: rgb(102,205,170);
+}

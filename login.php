@@ -107,7 +107,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
       <!-- Create New Account Form -->
       <form class="signup_form" action="create_new_account.php" method="post">
-        <input type="submit" id="newaccbtn" value="Create New Account">
+        <input type="submit" id="newaccbtn" value="Create Account">
       </form>
     </div>
   </body>

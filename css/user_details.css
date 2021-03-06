@@ -1,0 +1,46 @@
+body {
+  background-color: rgb(255,255,240);
+}
+
+h2 {
+  color: brown;
+}
+
+.detail_form {
+ background: white;
+ margin-top: 200px;
+ margin-left: 900px;
+ border: solid black 1px;
+ border-radius: 2px;
+ width: 20%;
+ padding-left: 50px;
+ padding-top: 100px;
+ padding-bottom: 60px;
+}
+
+input[type=text] {
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 10px;
+  padding-right: 0px;
+}
+
+input[type=number] {
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 10px;
+  padding-right: 0px;
+}
+
+select {
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 10px;
+  padding-right: 0px;
+}
+
+#Update_btn {
+  padding: 5px 20px;
+  border: solid black 1px;
+  background-color: rgb(230,230,250);
+}

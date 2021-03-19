@@ -102,6 +102,7 @@ if (isset($_GET["search"])) {
         <nav>
             <div id="profile_menu">
               <ul>
+                <li><a href="suggestions.php">Suggestions</a></li>
                 <li><a href="followers.php">Followers</a></li>
                 <li><a href="following.php">Following</a></li>
                 <li><a href="/project/index.html">Home</a></li>
@@ -127,5 +128,12 @@ if (isset($_GET["search"])) {
         </div>
       </div>
     </header>
+
+
+    <br><br><br><br>
+    <form action="post.php" method="post">
+      <input type="text" name="post_text" placeholder="Whats in your mind?">
+      <input type="submit" name="post" value="Post">
+    </form>
   </body>
 </html>

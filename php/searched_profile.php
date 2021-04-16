@@ -29,12 +29,7 @@ require_once "config.php";
       }
 
  ?>
-
-
-
-
-
-
+ 
 
 <!-- Html - Searched Profile -->
 <!DOCTYPE html>
@@ -48,5 +43,33 @@ require_once "config.php";
     <form class="" action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">
       <input type="submit" name="<?php echo $_SESSION["status"]; ?>" value="<?php echo $_SESSION["status"]; ?>">
     </form>
+
+    <div class="post">
+         <?php
+
+         $dir = 'users_directory/'.$_SESSION["searched_id"].'/';
+
+         $file_array = scandir($dir, 1);
+
+         foreach ($file_array as $key => $file_name) {
+           if (!in_array($file_name,array(".",".."))) {
+             echo '<div class="post">';
+             $user_post = fopen("$dir$file_name", "r");
+             echo '|| '.$_SESSION["searched_profile"].'<br>';
+
+             echo $file_name.'<br><br>';
+
+             while (!feof($user_post)) {
+               echo fgets($user_post).'<br>';
+             }
+
+             echo '<br>-----------------------------------------------';
+             echo '</div>';
+           }
+         }
+
+          ?>
+    </div>
+
   </body>
 </html>

@@ -99,9 +99,13 @@ if (isset($_GET["search"])) {
   <body>
     <header>
       <div class="profile_header">
+        <!-- Task bar-->
         <nav>
             <div id="profile_menu">
               <ul>
+                <li><a href="general.php">General</a></li>
+                <li><a href="forum.php">Forum</a></li>
+                <li><a href="chat_page.php">Lets Chat!</a></li>
                 <li><a href="suggestions.php">Suggestions</a></li>
                 <li><a href="followers.php">Followers</a></li>
                 <li><a href="following.php">Following</a></li>
@@ -111,9 +115,11 @@ if (isset($_GET["search"])) {
               </ul>
             </div>
         </nav>
+
+        <!-- Searching user profiles form-->
         <div id="searched_profile">
           <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="get">
-            <input type="text" name="profile" placeholder="Enter Username">
+            <input type="search" name="profile" placeholder="Enter Username">
             <input type="submit" name="search" value="Search"><br>
             <span><?php echo $user_err; ?></span><br><br>
           </form>
@@ -123,6 +129,7 @@ if (isset($_GET["search"])) {
             <input type="submit" name="profile_pic" value="Add Your Picture"><br><br>
           </form>
         </div>
+        <!-- User details hyperlink-->
         <div id="user_details">
           <a href="user_details.php">Tell Us Something About You</a>
         </div>
@@ -131,9 +138,47 @@ if (isset($_GET["search"])) {
 
 
     <br><br><br><br>
-    <form action="post.php" method="post">
-      <input type="text" name="post_text" placeholder="Whats in your mind?">
-      <input type="submit" name="post" value="Post">
+    <!-- User post - insert and delete form-->
+    <form class="post" action="post.php" method="post">
+      <input type="submit" name="insert_post" value="Post"><br><br>
+      <textarea name="post_text" rows="5" cols="70" placeholder="Whats in your mind?"></textarea><br><br>
+      <!-- Delete post
+      <label for="delete_post">COPY AND PASTE THE POST ADDRESS [DATE AND TIME] HERE, WHICH YOU WANT TO REMOVE PERMANENTLY! </label><br><br>
+      <input type="text" name="post_address" placeholder="Paste Post Address Here!"><br><br>
+      <input type="submit" name="delete_post" value="Delete Post Permanenty!">-->
     </form>
+
+
+<!--<div class="post">-->
+     <?php
+
+     $dir = 'users_directory/'.$_SESSION["id"].'/';
+
+     $file_array = scandir($dir, 1);
+
+     foreach ($file_array as $key => $file_name) {
+       if (!in_array($file_name,array(".",".."))) {
+         echo '<div class="post">';
+         $user_post = fopen("$dir$file_name", "r");
+         echo '|| '.$_SESSION["username"].'<br>';
+
+         echo $file_name.'<br><br>';
+
+         while (!feof($user_post)) {
+           echo fgets($user_post).'<br>';
+         }
+
+         echo '<br>-----------------------------------------------<br>';
+         echo "<form action='post.php' method='post'>
+            <input type='hidden' name='post_address' value='$file_name'>
+            <input type='submit' name='delete_post' value='Delete Post'>
+        </form>";
+         echo '</div>';
+       }
+     }
+
+      ?>
+<!--</div>-->
+
   </body>
 </html>

@@ -47,7 +47,7 @@ if (!isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == false) {
 
         $dir = 'messages/';
 
-        $date_array = scandir($dir, 1);
+        $date_array = scandir($dir);
 
       foreach ($date_array as $key => $date) {
         if (!in_array($date, array(".",".."))) {
@@ -56,7 +56,7 @@ if (!isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == false) {
           echo $date;
           echo '</div>';
           $real_time_msg_updation = [];
-            $user_array = scandir("$dir$date", 1);
+            $user_array = scandir("$dir$date");
 
           foreach ($user_array as $key => $user) {
             if (!in_array($user, array(".",".."))) {
@@ -74,7 +74,7 @@ if (!isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == false) {
             }
           }
 // Date wise msg display
-          krsort($real_time_msg_updation);
+          ksort($real_time_msg_updation);
 
           foreach ($real_time_msg_updation as $msg_time => $user) {
 
@@ -126,6 +126,9 @@ if (!isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == false) {
 $stmt->close();
 $mysqli->close();
          ?>
+<script type="text/javascript">
+  window.scrollTo(0, document.body.scrollHeight);
+</script>
 
   </body>
 </html>

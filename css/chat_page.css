@@ -1,0 +1,185 @@
+html {
+height:99%;
+width:99%;
+}
+
+body{
+	margin: 0px;
+	padding: 0px;
+	background-color: rgb(255,255,240);
+}
+
+h1, h2, h3{
+	margin: 0;
+	padding: 0;
+}
+
+p, ol, ul{
+	margin-top: 0;
+}
+
+p {
+	line-height: 180%;
+}
+
+ol, ul{
+	padding: 0;
+	list-style: none;
+}
+
+header{
+	overflow: hidden;
+	margin: 0 auto;
+	width: 1500px;
+}
+
+#chat_header{
+	text-align: center;
+	height: 60px;
+}
+
+#chat_menu{
+	right: 20px;
+	position: fixed;
+	float: right;
+	width: 35%;
+	height: 100%;
+	margin: none;
+	top: 0;
+  border-bottom:#000 medium solid !important;
+}
+
+
+#chat_menu ul{
+	text-align: center;
+	float: right;
+	margin: none;
+}
+
+#chat_menu li{
+	display: inline-block;
+	padding: none;
+	margin: none;
+}
+
+#chat_menu li a{
+	display: inline-block;
+	padding: 10px 10px;
+	text-decoration: none;
+	font-weight: 600;
+	font-size: 22px;
+	line-height: 40px;
+}
+
+#chat_menu li a{
+
+	color: rgb(128,0,128);
+}
+
+#chat_menu li:hover a{
+	background: rgb(250,235,215);
+	color: #0074D9;
+	text-decoration: none;
+}
+
+
+
+#chatbar {
+bottom:10px;
+right: 100px;
+width:40%;
+height:5%;
+position: fixed;
+margin-left: 100px;
+
+font-size: 20px;
+font-weight: 400;
+
+outline:none;
+resize: none;
+
+border:none;
+border-bottom:#000 medium solid !important;
+border-top:#000 medium solid !important;
+border-left:#000 medium solid !important;
+border-right:#000 medium solid !important;
+}
+
+#send_bttn {
+bottom:10px;
+right: 5px;
+width:5%;
+height:6%;
+position: fixed;
+margin-left: 845px;
+
+font-size: 20px;
+font-weight: 400;
+
+}
+
+#img_bttn {
+	bottom: :10px;
+	width:5%;
+	height:6%;
+	position: fixed;
+	margin-left: 0px;
+
+	font-size: 20px;
+	font-weight: 400;
+
+	border-top:#000 medium solid !important;
+}
+
+.date_pos {
+	top: 20px;
+	position: relative;
+	background: rgb(70,130,180);
+	margin-left: 340px;
+	border: solid black 1px;
+	border-radius: 2px;
+	width: 10%;
+	padding-top: 5px;
+	padding-bottom: 5px;
+
+	text-align: center;
+	color: white;
+	font-size: 20px;
+	font-weight: 400;
+
+}
+
+.user_msg {
+ top: 50px;
+ bottom: 15px;
+ position: relative;
+ background: rgb(221,160,221);
+ margin-left: 550px;
+ border: solid black 1px;
+ border-radius: 2px;
+ width: 15%;
+ padding-left: 10px;
+ padding-right: 10px;
+ padding-top: 10px;
+ padding-bottom: 5px;
+
+}
+
+.sender_msg {
+	top: 50px;
+ bottom: 15px;
+ position: relative;
+ background: rgb(221,160,221);
+ margin-left: 20px;
+ border: solid black 1px;
+ border-radius: 2px;
+ width: 15%;
+ padding-left: 10px;
+ padding-right: 10px;
+ padding-top: 5px;
+ padding-bottom: 5px;
+}
+
+#time {
+	 float: right;
+}

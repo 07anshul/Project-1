@@ -83,3 +83,16 @@ header{
 #searched_profile {
 	padding: 20px 10px;
 }
+
+.post{
+	background: white;
+  margin-top: 20px;
+  margin-left: 400px;
+  border: solid black 1px;
+  border-radius: 2px;
+  width: 35%;
+  padding-left: 50px;
+  padding-top: 20px;
+	padding-right: 20px;
+  padding-bottom: 20px;
+}

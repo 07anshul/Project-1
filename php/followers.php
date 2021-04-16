@@ -1,4 +1,5 @@
 <?php
+// Session start
 session_start();
 if (!isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == false) {
   header("location: login.php");
@@ -16,9 +17,27 @@ require_once "config.php";
   <head>
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
     <title><?php echo $_SESSION["username"]; ?>/Followers</title>
-    <link rel="stylesheet" type="text/css" href="/project/css/searched_profile.css">
+    <link rel="stylesheet" type="text/css" href="/project/css/followers.css">
   </head>
   <body>
+
+    <header>
+      <div class="followes_header">
+        <!-- Task bar-->
+        <nav>
+            <div id="followers_menu">
+              <ul>
+                <li><a href="/project/index.html">Home</a></li>
+                <li><a href="profile.php">My Profile</a></li>
+                <li><a href="chat_page.php">Lets Chat!</a></li>
+                <li><a href="forum.php">Forum</a></li>
+              </ul>
+            </div>
+        </nav>
+      </div>
+    </header>
+
+
     <?php
 
     // Prepare join statement
@@ -31,7 +50,8 @@ require_once "config.php";
       if ($stmt->execute()) {
         $result = $stmt->get_result();
         while ($followers = $result->fetch_assoc()) {
-          echo $followers["username"].'<br><br>';
+
+          echo "<div id=followers> $followers[username] </div>";
         }
       }
     }
